@@ -3,8 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/auth"
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/config"
+	"klickhr-apigateway/pkg/auth"
+	"klickhr-apigateway/pkg/config"
+
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,8 +3,9 @@ package auth
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/auth/routes"
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/config"
+	"klickhr-apigateway/pkg/auth/routes"
+
+	"klickhr-apigateway/pkg/config"
 )
 
 //Initialize Routes and register

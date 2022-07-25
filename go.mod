@@ -1,4 +1,4 @@
-module github.com/NicolasArizaR/klickhr-apigateway
+module klickhr-apigateway
 
 go 1.18
 

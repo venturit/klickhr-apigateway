@@ -5,7 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/auth/pb"
+	"klickhr-apigateway/pkg/auth/pb"
+
 	"github.com/gin-gonic/gin"
 )
 

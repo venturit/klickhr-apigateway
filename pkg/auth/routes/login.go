@@ -4,7 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/auth/pb"
+	"klickhr-apigateway/pkg/auth/pb"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,7 +15,7 @@ type LoginRequestBody struct {
 	Password string `json:"password"`
 }
 
-//Function Login returna JWT
+//Function Login return a JWT
 func Login(ctx *gin.Context, c pb.AuthServiceClient) {
 	b := LoginRequestBody{}
 

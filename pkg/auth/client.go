@@ -3,8 +3,9 @@ package auth
 import (
 	"fmt"
 
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/auth/pb"
-	"github.com/NicolasArizaR/klickhr-apigateway/pkg/config"
+	"klickhr-apigateway/pkg/auth/pb"
+	"klickhr-apigateway/pkg/config"
+
 	"google.golang.org/grpc"
 )
 
