@@ -12,7 +12,7 @@ type Config struct {
 
 func LoadConfig() (c Config, err error) {
 	viper.AddConfigPath("./pkg/config/envs")
-	viper.SetConfigName("dev")
+	viper.SetConfigName("example")
 	viper.SetConfigType("env")
 
 	viper.AutomaticEnv()
