@@ -5,6 +5,7 @@ import (
 
 	"klickhr-apigateway/pkg/auth"
 	"klickhr-apigateway/pkg/config"
+	"klickhr-apigateway/pkg/hris"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,6 +20,7 @@ func main() {
 	r := gin.Default()
 
 	auth.RegisterRoutes(r, &c)
+	hris.RegisterRoutes(r, &c)
 	//authSvc := *auth.RegisterRoutes(r, &c)
 	//product.RegisterRoutes(r, &c, &authSvc)
 	//order.RegisterRoutes(r, &c, &authSvc)
