@@ -9,6 +9,9 @@ service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+  rpc Forgot(ForgotRequest) returns (ForgotResponse) {}
+  rpc Recovery(RecoveryRequest) returns (RecoveryResponse) {}
+
 }
 
 // Register
@@ -44,4 +47,30 @@ message ValidateResponse {
   int64 status = 1;
   string error = 2;
   int64 userId = 3;
+}
+
+// Forgot Password
+
+message ForgotRequest {
+  string email = 1;
+
+}
+
+message ForgotResponse {
+  int64 status = 1; 
+  string error = 2;
+  
+}
+
+// Recovery Password
+
+message RecoveryRequest {
+  string email = 1;
+  int64 otp = 2;
+}
+
+message RecoveryResponse {
+  int64 status = 1;
+  string error = 2;
+  string token = 3;
 }
