@@ -22,8 +22,8 @@ func main() {
 	auth.RegisterRoutes(r, &c)
 	hris.RegisterRoutes(r, &c)
 	//authSvc := *auth.RegisterRoutes(r, &c)
-	//product.RegisterRoutes(r, &c, &authSvc)
-	//order.RegisterRoutes(r, &c, &authSvc)
+	//hris.RegisterRoutes(r, &c, &authSvc)
+	//sessions.RegisterRoutes(r, &c, &authSvc)
 
 	r.Run(c.Port)
 }
