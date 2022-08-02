@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package hris;
+
+option go_package = "./pkg/hris/pb";
+
+service HRISService {
+  rpc UploadHRIS(stream UploadHRISRequest) returns (UploadHRISResponse) {}
+}
+
+// UploadHRIS
+
+message UploadHRISRequest {
+  int64 file_type = 1;
+  int64 run_type = 2;
+  int64 import_type = 3;
+  int64 organization_id = 4;
+  string file_name = 5;
+  bytes file_bytes = 6;
+}
+
+message UploadHRISResponse {
+  int64 status = 1;
+  string error = 2;
+}
