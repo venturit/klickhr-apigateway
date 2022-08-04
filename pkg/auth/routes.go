@@ -17,8 +17,11 @@ func RegisterRoutes(r *gin.Engine, c *config.Config) *ServiceClient {
 	routes := r.Group("/auth")
 	routes.POST("/register", svc.Register)
 	routes.POST("/login", svc.Login)
-	routes.POST("/forgot", svc.Forgot)
-	routes.PATCH("/recovery", svc.Recovery)
+	routes.POST("/forgotpassword", svc.Forgot)
+	//routes.GET("/recoverypassword/:verificationCode", svc.Recovery)
+	//routes.PATCH("/resetpassword/:resetToken", svc.Reset)
+
+	//routes.PATCH("/recoverypassword", svc.Recovery)
 	//routes.GET("/refresh", svc.Recovery)
 	//routes.GET("/verifyemail/:verificationCode", rc.authController.VerifyEmail)
 	//routes.POST("/forgotpassword", rc.authController.ForgotPassword)
@@ -35,10 +38,16 @@ func (svc *ServiceClient) Login(ctx *gin.Context) {
 	routes.Login(ctx, svc.Client)
 }
 
+func (svc *ServiceClient) Forgot(ctx *gin.Context) {
+	routes.Forgot(ctx, svc.Client)
+}
+
+func (svc *ServiceClient) Reset(ctx *gin.Context) {
+	routes.Reset(ctx, svc.Client)
+}
+
+/*
 func (svc *ServiceClient) Recovery(ctx *gin.Context) {
 	routes.Recovery(ctx, svc.Client)
 }
-
-func (svc *ServiceClient) Forgot(ctx *gin.Context) {
-	routes.Recovery(ctx, svc.Client)
-}
+*/

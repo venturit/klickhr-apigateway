@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-//Authentication Microservice Client
+//Authentication service Client
 type ServiceClient struct {
 	Client pb.AuthServiceClient
 }
