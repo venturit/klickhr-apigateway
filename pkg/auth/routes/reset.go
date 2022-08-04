@@ -10,12 +10,12 @@ import (
 )
 
 //Endpoint Forgot Password route
-type ForgotRequestBody struct {
-	Email string `json:"email"`
-	//Password string `json:"password"`
+type ResetRequestBody struct {
+	//Email string `json:"email"`
+	Password string `json:"password"`
 }
 
-func Forgot(ctx *gin.Context, c pb.AuthServiceClient) {
+func Reset(ctx *gin.Context, c pb.AuthServiceClient) {
 	body := ForgotRequestBody{}
 	ctx.Bind(&body)
 	if err := ctx.BindJSON(&body); err != nil {
@@ -23,10 +23,8 @@ func Forgot(ctx *gin.Context, c pb.AuthServiceClient) {
 		return
 	}
 
-	//message := "You will receive a reset email if user with that email exist"
-
 	res, err := c.Register(context.Background(), &pb.RegisterRequest{
-		Email: body.Email,
+		//Email: body.Email,
 		//Password: body.Password,
 
 		/*

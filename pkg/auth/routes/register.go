@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//Endpoint Register route not necessary
+//Endpoint Register route cambiar struct por los necesarios al crear un usuario
 type RegisterRequestBody struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`

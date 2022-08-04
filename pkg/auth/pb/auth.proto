@@ -11,11 +11,10 @@ service AuthService {
   rpc Validate(ValidateRequest) returns (ValidateResponse) {}
   rpc Forgot(ForgotRequest) returns (ForgotResponse) {}
   rpc Recovery(RecoveryRequest) returns (RecoveryResponse) {}
-
+  //rpc Reset(ResetPassRequest) returns (ResetPassResponse) {}
 }
 
 // Register
-
 message RegisterRequest {
   string email = 1;
   string password = 2;
@@ -27,7 +26,6 @@ message RegisterResponse {
 }
 
 // Login
-
 message LoginRequest {
   string email = 1;
   string password = 2;
@@ -36,11 +34,11 @@ message LoginRequest {
 message LoginResponse {
   int64 status = 1;
   string error = 2;
-  string token = 3;
+  string token = 3;        //Access Token
+  //string refreshtoken = 4; //Refresh Token
 }
 
 // Validate
-
 message ValidateRequest { string token = 1; }
 
 message ValidateResponse {
@@ -50,7 +48,6 @@ message ValidateResponse {
 }
 
 // Forgot Password
-
 message ForgotRequest {
   string email = 1;
 
@@ -59,18 +56,35 @@ message ForgotRequest {
 message ForgotResponse {
   int64 status = 1; 
   string error = 2;
+  string otp = 3;
   
 }
 
 // Recovery Password
-
 message RecoveryRequest {
-  string email = 1;
-  int64 otp = 2;
+ 
+  string password = 1;
+  string passwordconfirm = 2;
+  //int64 otp = 1;
+  //string email = 1;
+ 
 }
 
 message RecoveryResponse {
   int64 status = 1;
   string error = 2;
-  string token = 3;
+  //string otp = 3;
 }
+
+// Reset Password
+/*
+message ResetPassRequest {
+ string password = 1;
+  string passwordconfirm = 2;
+}
+
+message ResetPassResponse {
+  int64 status = 1;
+  string error = 2;
+}
+*/
