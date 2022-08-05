@@ -11,8 +11,10 @@ import (
 
 //Endpoint Register route cambiar struct por los necesarios al crear un usuario
 type RegisterRequestBody struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	Email      string `json:"email"`
+	Password   string `json:"password"`
+	EmployeeId int    `json:"employee_id"`
+	RoleType   int    `json:"role_type"`
 }
 
 func Register(ctx *gin.Context, c pb.AuthServiceClient) {

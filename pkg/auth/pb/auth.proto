@@ -18,6 +18,9 @@ service AuthService {
 message RegisterRequest {
   string email = 1;
   string password = 2;
+  int64 employee_id = 3; 
+  int64 role_type = 4; 
+
 }
 
 message RegisterResponse {
