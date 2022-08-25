@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"context"
 	"net/http"
 
 	"klickhr-apigateway/pkg/auth/pb"
@@ -10,8 +11,8 @@ import (
 
 //Endpoint Recovery Password route
 type RecoveryRequestBody struct {
-	Email string `json:"email"`
-	//otp   int64  `json:"password"`
+	Password string `json:"password"`
+	OTP      string `json:"otp"`
 }
 
 func Recovery(ctx *gin.Context, c pb.AuthServiceClient) {
@@ -21,19 +22,18 @@ func Recovery(ctx *gin.Context, c pb.AuthServiceClient) {
 		ctx.AbortWithError(http.StatusBadRequest, err)
 		return
 	}
-	/*
-		res, err := c.Recovery(context.Background(), &pb.RecoveryRequest{
-			Email: body.Email,
-			OTP:   otp.(int64),
-		})
 
+	res, err := c.Recovery(context.Background(), &pb.RecoveryRequest{
+		Otp:             body.OTP,
+		Password:        body.Password,
+		Passwordconfirm: body.Password,
+	})
 
-		if err != nil {
-			ctx.AbortWithError(http.StatusBadGateway, err)
-			return
-		}
+	if err != nil {
+		ctx.AbortWithError(http.StatusBadGateway, err)
+		return
+	}
 
-		ctx.JSON(int(res.Status), &res)
+	ctx.JSON(int(res.Status), &res)
 
-	*/
 }

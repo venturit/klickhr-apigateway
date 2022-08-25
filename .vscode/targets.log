@@ -1,3 +1,4 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 3.81
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
@@ -6,7 +7,7 @@
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Wed Jul 27 14:29:57 2022
+# Make data base, printed on Thu Aug 25 07:33:24 2022
 
 # Variables
 
@@ -39,15 +40,17 @@ VSCODE_CWD = /
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-PATH = /usr/local/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/nicolasariza/go/bin:/Users/nicolasariza/go/bin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/nicolasariza/go/bin
 # environment
 GOPATH = /Users/nicolasariza/go
+# environment
+LaunchInstanceID = 08F0A8CE-73AA-4BAA-9E5B-F8D9DDDC42AA
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.tXzNvEsKaK/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mwnoFwCMhC/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -80,16 +83,12 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# environment
-LOCAL_GIT_DIRECTORY = /Applications/GitHub Desktop.app/Contents/Resources/app/git
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = nicolasariza
 # makefile
 .DEFAULT_GOAL := proto
-# environment
-GOROOT = /usr/local/go
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -126,6 +125,8 @@ MAKEFILES :=
 <F = $(notdir $<)
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a4
 # automatic
 ^F = $(notdir $^)
 # default
@@ -137,7 +138,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 52500
+VSCODE_PID = 370
 # variable set hash-table stats:
 # Load=64/1024=6%, Rehash=0, Collisions=2/88=2%
 
@@ -147,7 +148,7 @@ VSCODE_PID = 52500
 
 # Directories
 
-# . (device 16777221, inode 1920631): 11 files, no impossibilities.
+# . (device 16777223, inode 3860357): 11 files, no impossibilities.
 
 # 11 files, no impossibilities in 1 directories.
 
@@ -175,7 +176,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-27 14:06:29
+#  Last modified 2022-08-04 22:14:35
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -216,7 +217,7 @@ proto:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jul 27 14:29:57 2022
+# Finished Make data base on Thu Aug 25 07:33:24 2022
 
  
 make: *** No rule to make target `all'.  Stop.

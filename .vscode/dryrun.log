@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/nicolasariza/go/src/klickhr-apigateway'
+protoc pkg/**/pb/*.proto --go_out=plugins=grpc:.
+make: Leaving directory `/Users/nicolasariza/go/src/klickhr-apigateway'
+ 
