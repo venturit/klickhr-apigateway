@@ -11,8 +11,9 @@ import (
 
 //Endpoint Recovery Password route
 type RecoveryRequestBody struct {
-	Password string `json:"password"`
-	OTP      string `json:"otp"`
+	Password        string `json:"password"`
+	Passwordconfirm string `json:"passwordconfirm"`
+	OTP             string `json:"otp"`
 }
 
 func Recovery(ctx *gin.Context, c pb.AuthServiceClient) {
@@ -26,7 +27,7 @@ func Recovery(ctx *gin.Context, c pb.AuthServiceClient) {
 	res, err := c.Recovery(context.Background(), &pb.RecoveryRequest{
 		Otp:             body.OTP,
 		Password:        body.Password,
-		Passwordconfirm: body.Password,
+		Passwordconfirm: body.Passwordconfirm,
 	})
 
 	if err != nil {
