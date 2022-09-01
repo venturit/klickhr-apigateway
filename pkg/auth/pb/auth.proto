@@ -10,6 +10,7 @@ service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Validate(ValidateRequest) returns (ValidateResponse) {}
   rpc Forgot(ForgotRequest) returns (ForgotResponse) {}
+  rpc ValidateOTP(ValidationOTPRequest) returns (ValidationOTPResponse) {}
   rpc Recovery(RecoveryRequest) returns (RecoveryResponse) {}
 
 }
@@ -66,6 +67,17 @@ message ForgotResponse {
   
 }
 
+//Validation OTP
+message ValidationOTPRequest {
+  string otp = 1;
+}
+
+message ValidationOTPResponse {
+  int64 status = 1;
+  string error = 2;
+  string otp = 3;
+}
+
 // Recovery Password
 //Realizar correcciones 
 message RecoveryRequest {
@@ -78,5 +90,5 @@ message RecoveryRequest {
 message RecoveryResponse {
   int64 status = 1;
   string error = 2;
-  //string token = 3;
+  //string otp = 3;
 }

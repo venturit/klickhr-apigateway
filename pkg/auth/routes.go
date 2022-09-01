@@ -18,6 +18,7 @@ func RegisterRoutes(r *gin.Engine, c *config.Config) *ServiceClient {
 	routes.POST("/register", svc.Register)
 	routes.POST("/login", svc.Login)
 	routes.POST("/forgotpassword", svc.Forgot)
+	routes.POST("/validationOTP", svc.ValidationOTP)
 	routes.PATCH("/recoverypassword/:otp", svc.Recovery)
 	return svc
 }
@@ -32,6 +33,10 @@ func (svc *ServiceClient) Login(ctx *gin.Context) {
 
 func (svc *ServiceClient) Forgot(ctx *gin.Context) {
 	routes.Forgot(ctx, svc.Client)
+}
+
+func (svc *ServiceClient) ValidationOTP(ctx *gin.Context) {
+	routes.ValidationOTP(ctx, svc.Client)
 }
 
 func (svc *ServiceClient) Recovery(ctx *gin.Context) {

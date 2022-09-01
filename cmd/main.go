@@ -10,6 +10,7 @@ import (
 	//"klickhr.srm.apigateway/pkg/hris"
 	//"klickhr.srm.apigateway/pkg/organization"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,6 +22,8 @@ func main() {
 	}
 
 	r := gin.Default()
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
 
 	auth.RegisterRoutes(r, &c)
 	//hris.RegisterRoutes(r, &c)
