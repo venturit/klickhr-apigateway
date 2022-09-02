@@ -24,7 +24,7 @@ func main() {
 	r := gin.Default()
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
-
+	r.Use(cors.New(config))
 	auth.RegisterRoutes(r, &c)
 	//hris.RegisterRoutes(r, &c)
 	//organization.RegisterRoutes(r, &c)
