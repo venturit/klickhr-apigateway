@@ -28,7 +28,7 @@ func ValidationOTP(ctx *gin.Context, c pb.AuthServiceClient) {
 		return
 	}
 
-	res, err := c.Recovery(context.Background(), &pb.RecoveryRequest{
+	res, err := c.ValidateOTP(context.Background(), &pb.ValidationOTPRequest{
 		Otp: body.OTP,
 	})
 

@@ -19,7 +19,7 @@ func RegisterRoutes(r *gin.Engine, c *config.Config) *ServiceClient {
 	routes.POST("/login", svc.Login)
 	routes.POST("/forgotpassword", svc.Forgot)
 	routes.POST("/validationOTP", svc.ValidationOTP)
-	routes.PATCH("/recoverypassword/:otp", svc.Recovery)
+	routes.PATCH("/recoverypassword", svc.Recovery)
 	return svc
 }
 
